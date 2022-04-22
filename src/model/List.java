@@ -10,6 +10,7 @@ public class List {
 			head = n;
 			head.setNext(head);
 			head.setPrev(head);
+			actual = head;
 			return;
 		}else {
 			Node tail = head.getPrev();
@@ -37,18 +38,14 @@ public class List {
 		print(n.getNext());
 	}
 	
+	
 	public void mostrarTurno() {
-		mostrarTurno(actual);
-	}
-	private void mostrarTurno(Node actual) {
 		if(actual == null) {
 			System.out.println("no hay turnos aún");
 			return;
 		}else {
 			System.out.println(actual.getValue());
-			actual.setNext(actual.getNext());
 		}
-		
 	}
 	
 	
