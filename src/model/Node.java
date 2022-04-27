@@ -6,6 +6,7 @@ public class Node {
 	
 	private Node next;
 	private Node prev;
+	private int count;
 	
 	
 	public Node(int value) {
@@ -31,6 +32,15 @@ public class Node {
 	}
 	public void setPrev(Node prev) {
 		this.prev = prev;
+	}
+	public int getCount() {
+		return count;
+	}
+
+
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 	
