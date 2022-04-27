@@ -15,7 +15,8 @@ public class Main {
 					"\n2. Mostrar turno"+
 					"\n3. Pasar turno" + 
 					"\n4. Eliminar turno actual"+
-					"\n5. Mostrar todos los turnos"+
+					"\n5. Eliminar los turnos retrasados"+
+					"\n6. Mostrar todos los turnos"+
 					"\n0. Cerrar programa");
 			option = sc.nextInt();
 			switchMenu1(option);
@@ -42,9 +43,13 @@ public class Main {
 			list.elimTurn();
 			break;
 		case 5:
+			list.elimLateTurns();
+			break;
+		case 6:
 			list.showTurns();
 			break;
 		}
+		
 	}
 
 }

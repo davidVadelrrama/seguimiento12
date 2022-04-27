@@ -59,13 +59,39 @@ public class List {
 	
 	
 	public void elimTurn() {
-		Node n;
-		if(actual.getCount()==3) {
-			actual.getNext().setPrev(actual.getPrev());
-			actual.getPrev().setNext(actual.getNext());
-		}
+		elimTurn(actual);
+		
 	}
 	
+	private void elimTurn(Node current) {
+		Node a = current.getNext();
+		Node b = current.getPrev();
+		a.setPrev(b);
+		b.setNext(a);
+		actual = a;
+		head = actual;
+		showTurns();
+	}
+	
+	public void elimLateTurns() {
+		elimLateTurns(actual);
+	}
+
+
+	private void elimLateTurns(Node n) {
+		Node a = n.getNext();
+		Node b = n.getPrev();
+		if(n.getCount() == 3) {
+			a.setPrev(b);
+			b.setNext(a);
+			actual = a;
+			head = actual;
+			return;
+		}
+		elimLateTurns(n.getNext());
+	}
+
+
 	public void showTurns() {
 		System.out.println("----------------------");
 		showTurns(head);
